@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Person } from '../person';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,16 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'name']
-  dashBoardData = [
-    { id: 1, name: "Ed"},
-    { id: 2, name: "Brandon"},
-    { id: 3, name: "Hudson"},
-    { id: 4, name: "Cole"}
-  ] ;
+  person: Person = {id: 1, name: "Ed", description: "This is Ed's description"};
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  displayDescription(person: Person) {
+    this.person = person;
+  }
 }
