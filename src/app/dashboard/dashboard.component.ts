@@ -7,7 +7,7 @@ import { Person } from '../person';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  person: Person = {id: 1, name: "Ed", description: "This is Ed's description"};
+  person: Person = {id: 1, name: "Ed", age: 42, hobbies: "Ed's hobbies."};
 
   constructor() { }
 

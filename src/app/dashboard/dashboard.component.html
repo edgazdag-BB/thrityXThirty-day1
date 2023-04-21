@@ -1,6 +1,7 @@
 <mat-toolbar color="primary">
   <span>30 X 30 - Day 1</span>
 </mat-toolbar>
-<app-person-list (personDesc)="displayDescription($event)"></app-person-list>
-<br>
-<app-person-detail [person]="person"></app-person-detail>
+<div style="display: flex;">
+  <app-person-list style="width: 100%; max-width: 400px; padding: 20px;" (personDesc)="displayDescription($event)"></app-person-list>
+  <app-person-detail style="width: 100%; max-width: 400px; padding: 20px;" [person]="person"></app-person-detail>
+</div>

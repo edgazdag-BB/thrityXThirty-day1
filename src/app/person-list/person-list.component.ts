@@ -12,10 +12,10 @@ export class PersonListComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name']
   person!: Person;
   personList: Person[] = [
-    { id: 1, name: "Ed", description: "This is Ed's description."},
-    { id: 2, name: "Brandon", description: "This is Brandon's description."},
-    { id: 3, name: "Hudson", description: "This is Hudson's description."},
-    { id: 4, name: "Cole", description: "This is Cole's description."}
+    { id: 1, name: "Ed", age: 42, hobbies: "Ed's hobbies."},
+    { id: 2, name: "Brandon", age: 30, hobbies: "Brandon's hobbies."},
+    { id: 3, name: "Hudson", age: 30, hobbies: "Hudson's hobbies."},
+    { id: 4, name: "Cole", age: 30, hobbies: "Cole's hobbies."}
   ];
 
   constructor() { }
