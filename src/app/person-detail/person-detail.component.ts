@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EnvironmentInjector, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Person } from '../person';
 import { FormControl, FormGroup } from '@angular/forms';
 
@@ -9,15 +9,23 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class PersonDetailComponent implements OnInit {
   @Input() person!: Person;
-  
-  personForm = new FormGroup({
-    name: new FormControl(''),
-    age: new FormControl(''),
-    hobbies: new FormControl(''),
-  });
+  @Output() personUpdate: EventEmitter<Person> = new EventEmitter<Person>();
+  @Output() personAdd: EventEmitter<Person> = new EventEmitter<Person>();
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  updatePerson(person: Person) {
+    this.personUpdate.emit(person);
+  }
+  
+  deletePerson(person: Person) {
+    this.personUpdate.emit(person);
+  }
+
+  addPerson(person: Person) {
+    this.personAdd.emit(person);
   }
 
 }

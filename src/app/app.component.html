@@ -1,1 +1,16 @@
-<app-dashboard></app-dashboard>
+<mat-toolbar color="primary">
+  <span>30 X 30 - Day 1</span>
+</mat-toolbar>
+<div style="display: flex">
+  <app-person-list
+    style="width: 100%; max-width: 400px; padding: 20px"
+    [personList]="personList"
+    (person)="populateForm($event)"
+    (index)="deletePerson($event)"
+  ></app-person-list>
+  <app-person-detail
+    style="width: 100%; max-width: 400px; padding: 20px"
+    [person]="currentPerson"
+    (personAdd)="addNewPerson($event)"
+  ></app-person-detail>
+</div>

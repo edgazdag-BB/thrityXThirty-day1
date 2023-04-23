@@ -1,9 +1,23 @@
 <mat-card style="width: 100%; max-width: 400px;" class="mat-elevation-z8">
   <mat-card-header>Personal Information</mat-card-header>
-  <form [formGroup]="personForm">
     <mat-form-field appearance="standard">
       <mat-label>Name</mat-label>
-      <input matInput id="name" type="text" formControlName="name">
+      <input matInput id="name" name="name" type="text" required [(ngModel)]="person.name">
     </mat-form-field>
-  </form>
+    <br>
+    <mat-form-field appearance="standard">
+      <mat-label>Age</mat-label>
+      <input matInput id="age" name="age" type="text" required [(ngModel)]="person.age">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="standard">
+      <mat-label>Hobbies</mat-label>
+      <input matInput id="hobbies" name="hobbies" type="text" [(ngModel)]="person.hobbies">
+    </mat-form-field>
+    <br>
+    <div style="display: flex;">
+      <button mat-raised-button color="primary" (click)="updatePerson(person)">Update/Save</button>
+      <span style="padding: 10px;"></span>
+      <button mat-raised-button color="accent" (click)="addPerson(person)">Add New</button>
+    </div>
 </mat-card>

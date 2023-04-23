@@ -8,6 +8,25 @@
     <th mat-header-cell *matHeaderCellDef> Name </th>
     <td mat-cell *matCellDef="let person"> {{person.name}} </td>
   </ng-container>
+
+  <ng-container matColumnDef="age">
+    <th mat-header-cell *matHeaderCellDef> Age </th>
+    <td mat-cell *matCellDef="let person"> {{person.age}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="hobbies"> 
+    <th mat-header-cell *matHeaderCellDef> Hobbies </th>
+    <td mat-cell *matCellDef="let person"> {{person.hobbies}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="delete">
+    <th mat-header-cell *matHeaderCellDef>Delete</th>
+    <td mat-cell *matCellDef="let person; let i = index">
+      <button mat-mini-fab color="primary" (click)="deletePerson(i, person)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="displayDescription(row)"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="populateForm(row)"></tr>
 </table>
